@@ -7,10 +7,10 @@ import java.util.Objects;
 public class Song {
 
     //TODO The song id (int songId) is between 1000 to 9999(both inclusive).  Default is 9999.
-   private int songId =0;
-   private String name =" ";
-   private Artist artist;
-   private int length=1;
+    private int songId =0;
+    private String name =" ";
+    private Artist artist;
+    private int length=1;
 
     //TODO The song name (String name).
     //     Default value is "".
@@ -32,6 +32,8 @@ public class Song {
     }
 
 
+
+
     //TODO Add a getter and setter for each field, that adheres to the above validation rules
 
     public int getSongId() {
@@ -39,9 +41,9 @@ public class Song {
     }
 
     public void setSongId(int songId) {
-       if(Utilities.validRange(songId,1000,9999)){
-           this.songId = songId;
-       }
+        if(Utilities.validRange(songId,1000,9999)){
+            this.songId = songId;
+        }
     }
 
     public String getName() {
@@ -50,7 +52,7 @@ public class Song {
 
     public void setName(String name) {
         if(Utilities.validateStringLength(name,15))
-        this.name = name;
+            this.name = name;
     }
 
     public Artist getArtist() {
@@ -67,7 +69,7 @@ public class Song {
 
     public void setLength(int length) {
         if (Utilities.validRange(length,1,600))
-        this.length = length;
+            this.length = length;
     }
 //TODO Add a generated equals method.
 

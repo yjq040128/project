@@ -1,21 +1,35 @@
 package models;
 
-import utils.Utilities;
-
-import java.util.Objects;
+import javax.swing.text.Utilities;
 
 public class Artist {
 
+
+    public String getArtistName() {
+        return artistName;
+    }
+
+    public void setArtistName(String artistName) {
+        this.artistName = artistName;
+    }
 
     //TODO The artist name (String artistName)  in the system is entered by the user.
     //     Default value is "".
     //     When creating the Artist, truncate the name to 15 characters.
     //     When updating an existing Artist, only update the name if it is 15 characters or less.
-    private String artistName= " ";
+    private String artistName ="";
 
+
+    public boolean isVerified() {
+        return verified;
+    }
+
+    public void setVerified(boolean verified) {
+        this.verified = verified;
+    }
 
     //TODO The verified status (boolean verified)  Default is false.
-    private boolean verified= false;
+    private boolean verified = false;
 
     //TODO Add the constructor, Artist(String, boolean), that adheres to the above validation rules
 
@@ -33,44 +47,9 @@ public class Artist {
     //TODO The toString should return the string in this format:
     //      Taylor Swift is a verified artist  OR
     //      Shane Hennessy is not a verified artist
-
-    public String getArtistName() {
-        return artistName;
-    }
-
-    public boolean isVerified() {
-        return verified;
-    }
-
-    public void setVerified(boolean verified) {
-        this.verified = verified;
-
-    }
-    public void setArtistName(String artistName){
-        if(Utilities.validateStringLength(artistName,15)){
-            this.artistName=artistName;
-        }
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Artist artist = (Artist) o;
-        return verified == artist.verified && Objects.equals(artistName, artist.artistName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(artistName, verified);
-    }
-
-    @Override
-    public String toString() {
-        return "Artist{" +
-                "artistName='" + artistName + '\'' +
-                ", verified=" + verified +
-                '}';
-    }
+public String toString(){
+        return"Artist Name:"+artistName
+                +",is verified:"+ Utilities.booleanToYN(verified);
+}
 
 }
